@@ -16,16 +16,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vmI-FY-qwY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UnN-JS-zYg">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="l8U-8g-GYt">
+                                    <size key="itemSize" width="158" height="158"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ngY-km-IL9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QYq-aE-Og6"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDT-Vr-bZK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мои наборы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pp-YA-UAH">
+                                        <rect key="frame" x="134.5" y="81" width="145" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-zP-gGt">
+                                        <rect key="frame" x="16" y="88" width="15" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="JQ6-Di-yU6"/>
+                                            <constraint firstAttribute="width" constant="15" id="oTa-Us-cm7"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="back"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0pp-YA-UAH" firstAttribute="centerX" secondItem="vDT-Vr-bZK" secondAttribute="centerX" id="3By-9c-5pU"/>
+                                    <constraint firstItem="5Bt-zP-gGt" firstAttribute="leading" secondItem="vDT-Vr-bZK" secondAttribute="leading" constant="16" id="VpH-u6-jmC"/>
+                                    <constraint firstAttribute="height" constant="140" id="cq2-oQ-fx6"/>
+                                    <constraint firstAttribute="bottom" secondItem="0pp-YA-UAH" secondAttribute="bottom" constant="30" id="eoi-RH-CT1"/>
+                                    <constraint firstItem="5Bt-zP-gGt" firstAttribute="bottom" secondItem="0pp-YA-UAH" secondAttribute="bottom" id="g8f-Qp-7L8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UnN-JS-zYg" secondAttribute="trailing" id="1uc-JR-m1m"/>
+                            <constraint firstItem="vDT-Vr-bZK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BRM-1f-5qY"/>
+                            <constraint firstItem="vDT-Vr-bZK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LlU-bs-QJy"/>
+                            <constraint firstItem="vmI-FY-qwY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NSm-V6-BMF"/>
+                            <constraint firstItem="vDT-Vr-bZK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QT3-jy-cRi"/>
+                            <constraint firstAttribute="bottom" secondItem="vmI-FY-qwY" secondAttribute="bottom" id="WTO-Kk-GsO"/>
+                            <constraint firstItem="UnN-JS-zYg" firstAttribute="top" secondItem="vDT-Vr-bZK" secondAttribute="bottom" id="Xcb-Si-9hL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vmI-FY-qwY" secondAttribute="trailing" id="bKh-0n-Dgv"/>
+                            <constraint firstItem="vmI-FY-qwY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="guC-Fk-oVJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UnN-JS-zYg" secondAttribute="bottom" id="iJx-3A-No1"/>
+                            <constraint firstItem="UnN-JS-zYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qld-OK-89J"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="UnN-JS-zYg" id="dXl-Nx-A2n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88" y="100"/>
+            <point key="canvasLocation" x="86.956521739130437" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="15" height="22"/>
+        <image name="background" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

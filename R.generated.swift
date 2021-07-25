@@ -139,6 +139,137 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 9 images.
+  struct image {
+    /// Image `back`.
+    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
+    /// Image `background`.
+    static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+    /// Image `education`.
+    static let education = Rswift.ImageResource(bundle: R.hostingBundle, name: "education")
+    /// Image `group1`.
+    static let group1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group1")
+    /// Image `group2`.
+    static let group2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group2")
+    /// Image `group3`.
+    static let group3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group3")
+    /// Image `group5`.
+    static let group5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group5")
+    /// Image `plus`.
+    static let plus = Rswift.ImageResource(bundle: R.hostingBundle, name: "plus")
+    /// Image `trash`.
+    static let trash = Rswift.ImageResource(bundle: R.hostingBundle, name: "trash")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "background", bundle: ..., traitCollection: ...)`
+    static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "education", bundle: ..., traitCollection: ...)`
+    static func education(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.education, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "group1", bundle: ..., traitCollection: ...)`
+    static func group1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.group1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "group2", bundle: ..., traitCollection: ...)`
+    static func group2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.group2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "group3", bundle: ..., traitCollection: ...)`
+    static func group3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.group3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "group5", bundle: ..., traitCollection: ...)`
+    static func group5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.group5, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plus", bundle: ..., traitCollection: ...)`
+    static func plus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plus, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "trash", bundle: ..., traitCollection: ...)`
+    static func trash(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.trash, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `CreateGroupCell`.
+    static let createGroupCell = _R.nib._CreateGroupCell()
+    /// Nib `GroupCell`.
+    static let groupCell = _R.nib._GroupCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CreateGroupCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.createGroupCell) instead")
+    static func createGroupCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.createGroupCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GroupCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.groupCell) instead")
+    static func groupCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.groupCell)
+    }
+    #endif
+
+    static func createGroupCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreateGroupCell? {
+      return R.nib.createGroupCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreateGroupCell
+    }
+
+    static func groupCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GroupCell? {
+      return R.nib.groupCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GroupCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `CreateGroupCell`.
+    static let createGroupCell: Rswift.ReuseIdentifier<CreateGroupCell> = Rswift.ReuseIdentifier(identifier: "CreateGroupCell")
+    /// Reuse identifier `GroupCell`.
+    static let groupCell: Rswift.ReuseIdentifier<GroupCell> = Rswift.ReuseIdentifier(identifier: "GroupCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -155,9 +286,64 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _CreateGroupCell.validate()
+      try _GroupCell.validate()
+    }
+
+    struct _CreateGroupCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = CreateGroupCell
+
+      let bundle = R.hostingBundle
+      let identifier = "CreateGroupCell"
+      let name = "CreateGroupCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreateGroupCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreateGroupCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in nib 'CreateGroupCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GroupCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GroupCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GroupCell"
+      let name = "GroupCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GroupCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GroupCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "education", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'education' is used in nib 'GroupCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "trash", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'trash' is used in nib 'GroupCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -199,6 +385,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
