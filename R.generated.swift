@@ -139,7 +139,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 13 images.
   struct image {
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
@@ -147,6 +147,8 @@ struct R: Rswift.Validatable {
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
     /// Image `education`.
     static let education = Rswift.ImageResource(bundle: R.hostingBundle, name: "education")
+    /// Image `firstImage`.
+    static let firstImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "firstImage")
     /// Image `group1`.
     static let group1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group1")
     /// Image `group2`.
@@ -155,8 +157,14 @@ struct R: Rswift.Validatable {
     static let group3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group3")
     /// Image `group5`.
     static let group5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group5")
+    /// Image `left`.
+    static let left = Rswift.ImageResource(bundle: R.hostingBundle, name: "left")
     /// Image `plus`.
     static let plus = Rswift.ImageResource(bundle: R.hostingBundle, name: "plus")
+    /// Image `right`.
+    static let right = Rswift.ImageResource(bundle: R.hostingBundle, name: "right")
+    /// Image `secondImage`.
+    static let secondImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "secondImage")
     /// Image `trash`.
     static let trash = Rswift.ImageResource(bundle: R.hostingBundle, name: "trash")
 
@@ -178,6 +186,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "education", bundle: ..., traitCollection: ...)`
     static func education(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.education, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "firstImage", bundle: ..., traitCollection: ...)`
+    static func firstImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.firstImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -210,9 +225,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "left", bundle: ..., traitCollection: ...)`
+    static func left(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.left, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "plus", bundle: ..., traitCollection: ...)`
     static func plus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plus, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right", bundle: ..., traitCollection: ...)`
+    static func right(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "secondImage", bundle: ..., traitCollection: ...)`
+    static func secondImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.secondImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -226,12 +262,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `AddGroupViewController`.
+    static let addGroupViewController = _R.nib._AddGroupViewController()
     /// Nib `CreateGroupCell`.
     static let createGroupCell = _R.nib._CreateGroupCell()
     /// Nib `GroupCell`.
     static let groupCell = _R.nib._GroupCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddGroupViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addGroupViewController) instead")
+    static func addGroupViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addGroupViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CreateGroupCell", in: bundle)`
@@ -248,6 +294,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.groupCell)
     }
     #endif
+
+    static func addGroupViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addGroupViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
 
     static func createGroupCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreateGroupCell? {
       return R.nib.createGroupCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreateGroupCell
@@ -296,8 +346,28 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _AddGroupViewController.validate()
       try _CreateGroupCell.validate()
       try _GroupCell.validate()
+    }
+
+    struct _AddGroupViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddGroupViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "firstImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'firstImage' is used in nib 'AddGroupViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'left' is used in nib 'AddGroupViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'right' is used in nib 'AddGroupViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _CreateGroupCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {

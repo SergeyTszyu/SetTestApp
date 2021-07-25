@@ -96,6 +96,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: CreateGroupCellDelegate {
     
     func createGroupCellTapAdd(_ cell: CreateGroupCell) {
-        
+        let addGroupViewController = AddGroupViewController()
+        addGroupViewController.modalPresentationStyle = .overFullScreen
+        addGroupViewController.modalTransitionStyle = .crossDissolve
+        present(addGroupViewController, animated: true, completion: nil)
     }
 }

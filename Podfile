@@ -7,5 +7,6 @@ target 'SetTestApp' do
   use_frameworks!
 
     pod 'R.swift'
+    pod 'TPKeyboardAvoiding',    '~> 1.3'
 
 end
